@@ -10,4 +10,10 @@ git config --global user.name
 git --version
 
 
-// 
+//  update the current branch name
+git branch -M
+
+git branch  // this command list all branchs
+
+git checkout -b branchName // create and switch in the branch 
+
