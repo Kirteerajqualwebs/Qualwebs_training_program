@@ -1,3 +1,19 @@
+git init
+git add -A
+git commit -m "message"
+
+git push origin branch-name
+git pull origin branch-name
+
+
+git remote   // this command mainly use to connect and mange the local repo to github hosted repo
+
+git remote -v // this command show the remote github repo url and name 
+
+git remote add origin ----url----   /// this command connect the local repo to github hosted repo
+git remote remove origin   // remove the remote connection and not delete the github repo
+
+
 // list name and email
 git config --global --list
 
