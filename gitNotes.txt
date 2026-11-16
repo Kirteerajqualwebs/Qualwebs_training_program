@@ -17,3 +17,15 @@ git branch  // this command list all branchs
 
 git checkout -b branchName // create and switch in the branch 
 
+
+
+// this command delete your local computer branch after this you need to delete remote branch too
+git branch -d branch-name
+
+// this command delete the remote branch too
+git push origin --delete  kirteeraj
+
+
+// it remove the stale reference of the deleted remote branch 
+git fetch --prune 
+
