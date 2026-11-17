@@ -46,5 +46,11 @@ git push origin --delete  kirteeraj
 git fetch --prune 
 
 
+// stash ->>>>>>>>>>>>  command is mainly used for saved your current unstaged change temporary
+// git stash
+// git stash pop
+// git stash list
+// git stash apply	->>>>>>>>> Saved changes wapas laata hai, lekin stash mein copy rakhta hai.
 
-hello this line is write for check git diff command 
+// git stash drop	->>>>>>>> Stash ki saved entry delete karta hai.
+
