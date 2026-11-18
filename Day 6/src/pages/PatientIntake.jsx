@@ -1,8 +1,11 @@
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import { useState } from "react";
-
+import { usePatients } from "../context/PatientContext";
+import { useNavigate } from "react-router-dom";
 function PatientIntake() {
+  const { addPatient } = usePatients();
+  const navigate = useNavigate();
   const initialFormData = {
     name: "",
     age: "",
@@ -34,6 +37,7 @@ function PatientIntake() {
   function handleSubmit(e) {
     e.preventDefault();
 
+    // 1. Required fields validation
     if (
       !formData.name.trim() ||
       !formData.age ||
@@ -45,28 +49,32 @@ function PatientIntake() {
       return;
     }
 
+    // 2. Age validation
     if (Number(formData.age) < 1 || Number(formData.age) > 120) {
       setMessage("Please enter a valid age between 1 and 120.");
       setMessageType("error");
       return;
     }
 
+    // 3. Contact validation
     if (!/^[0-9]{10}$/.test(formData.contact)) {
       setMessage("Contact number must contain exactly 10 digits.");
       setMessageType("error");
       return;
     }
 
+    // 4. Email validation (optional field)
     if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       setMessage("Please enter a valid email address.");
       setMessageType("error");
       return;
     }
 
-    setMessage("Patient registered successfully!");
-    setMessageType("success");
+    // 5. Add patient to shared context
+    addPatient(formData);
 
-    console.log("Patient Data:", formData);
+    // 6. Navigate to Patient List
+    navigate("/patients");
   }
 
   function handleReset() {

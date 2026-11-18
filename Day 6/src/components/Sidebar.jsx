@@ -1,11 +1,11 @@
 
+import { NavLink } from "react-router-dom";
+
 function Sidebar() {
   const menuItems = [
-    { icon: "▦", name: "Dashboard" },
-    { icon: "♙", name: "Patients" },
-    { icon: "＋", name: "Patient Intake" },
-    { icon: "▣", name: "Appointments" },
-    { icon: "⚙", name: "Settings" },
+    { icon: "▦", name: "Dashboard", path: "/dashboard" },
+    { icon: "♙", name: "Patients", path: "/patients" },
+    { icon: "＋", name: "Patient Intake", path: "/intake" },
   ];
 
   return (
@@ -20,18 +20,20 @@ function Sidebar() {
 
       <nav className="space-y-2">
         {menuItems.map((item) => (
-          <a
+          <NavLink
             key={item.name}
-            href="#"
-            className={`flex items-center gap-3 px-4 py-3 rounded-lg transition ${
-              item.name === "Dashboard"
-                ? "bg-blue-600 text-white"
-                : "text-slate-300 hover:bg-slate-800"
-            }`}
+            to={item.path}
+            className={({ isActive }) =>
+              `flex items-center gap-3 px-4 py-3 rounded-lg transition ${
+                isActive
+                  ? "bg-blue-600 text-white"
+                  : "text-slate-300 hover:bg-slate-800"
+              }`
+            }
           >
             <span>{item.icon}</span>
             <span>{item.name}</span>
-          </a>
+          </NavLink>
         ))}
       </nav>
     </aside>
