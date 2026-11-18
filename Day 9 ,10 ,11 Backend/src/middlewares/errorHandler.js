@@ -6,7 +6,7 @@ function errorHandler(err, req, res, next) {
       code: err.code || "INTERNAL_SERVER_ERROR",
       message: err.message || "Something went wrong",
     },
-  });
+  });                                                                                                          
 }
 
 
