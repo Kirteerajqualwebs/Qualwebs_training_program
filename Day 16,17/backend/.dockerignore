@@ -1,0 +1,80 @@
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Secrets & Environment variables (Crucial for security)
+.env
+.env.*
+*.pem
+*.key
+*.crt
+secrets.yml
+secrets.yaml
+credentials.json
+
+# Docker files
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# IDE & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs & Databases
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+*.sqlite
+*.sqlite3
+*.db
+
+# Documentation & CI/CD
+*.md
+docs/
+.github/
+.gitlab-ci.yml
+Jenkinsfile
+
+# Tests & Coverage
+test/
+tests/
+__tests__/
+*.test.*
+*.spec.*
+coverage/
+.coverage
+htmlcov/
+.pytest_cache/
+
+# --- Language-Specific Dependencies & Build Artifacts ---
+
+# Node.js
+node_modules/
+npm-debug.log
+.npm/
+.yarn/
+dist/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.mypy_cache/
+.ruff_cache/
+
+# Go / Rust / Java
+vendor/
+target/
+*.jar
+*.war

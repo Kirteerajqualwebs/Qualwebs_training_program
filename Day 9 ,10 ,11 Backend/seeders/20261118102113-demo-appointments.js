@@ -11,11 +11,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
-      {PostgreSQL setup
-
-
-
-
+      {
         patientId: 2,
         doctorId: 2,
         date: new Date("2026-11-21T11:00:00"),

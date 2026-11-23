@@ -1,4 +1,3 @@
-
 const User = require("./User");
 const Patient = require("./Patient");
 const Doctor = require("./Doctor");

@@ -1,6 +1,9 @@
 const express  = require("express");
 const healthRoute = require("./routes/healthroutes.js")
 const errorHandler = require("./middlewares/errorHandler.js")
+const authRoute = require("./routes/authRoutes.js")
+const protectedRoutes = require("./routes/protectedRoutes");
+
 const app = express();
 
 app.use(express.json()) // for parse json data
@@ -8,8 +11,8 @@ app.use(express.json()) // for parse json data
 
 //routes
 app.use('/api' , healthRoute)
-
-
+app.use('/api/auth',authRoute )
+app.use("/api", protectedRoutes);
 
 // Handle unknown routes
 app.use((req, res, next) => {
