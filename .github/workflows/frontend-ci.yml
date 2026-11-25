@@ -20,8 +20,8 @@ jobs:
 
         - name: Install dependencies
           run: npm install
-          working-directory: frontend
+          working-directory: docker-aws-deployment/frontend
 
         - name: Build React application
           run: npm run build
-          working-directory: frontend               
+          working-directory: docker-aws-deployment/frontend               
