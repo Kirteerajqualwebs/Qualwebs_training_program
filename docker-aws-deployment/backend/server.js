@@ -1,11 +1,12 @@
 
 const express = require("express");
 const path = require("path");
-
+const cors = require("cors");
 const app = express();
 
 const publicPath = path.join(__dirname, "public");
 
+app.use(cors());
 // Backend API
 app.get("/api", (req, res) => {
   res.json({
