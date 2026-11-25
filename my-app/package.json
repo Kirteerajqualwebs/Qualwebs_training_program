@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "next": "16.4.6",
+    "pg": "^8.23.1",
+    "pg-hstore": "^2.3.4",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "sequelize": "^6.37.8"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "4.3.3",

@@ -5,7 +5,7 @@ const authRoute = require("./routes/authRoutes.js")
 const protectedRoutes = require("./routes/protectedRoutes");
 
 const app = express();
-
+app.use(express.static("public"))
 app.use(express.json()) // for parse json data
 
 
@@ -15,14 +15,14 @@ app.use('/api/auth',authRoute )
 app.use("/api", protectedRoutes);
 
 // Handle unknown routes
-app.use((req, res, next) => {
-  const error = new Error("Route not found");
+// app.use((req, res, next) => {
+//   const error = new Error("Route not found");
 
-  error.statusCode = 404;
-  error.code = "NOT_FOUND";
+//   error.statusCode = 404;
+//   error.code = "NOT_FOUND";
 
-  next(error);
-});
+//   next(error);
+// });
 
 // error handler middleware
 app.use(errorHandler)
